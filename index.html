@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M.M FITNESS — Your Fitness World</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="intro" class="intro">
+  <div class="orbit orbit1"></div><div class="orbit orbit2"></div>
+  <div class="intro-logo"><div>M<span>.</span>M</div><h1>FITNESS</h1>
+    <p>MOVE BEYOND YOUR LIMITS</p><div class="loader"></div>
+    <small>STRENGTH · DISCIPLINE · PROGRESS</small>
+  </div>
+</div>
+
+<div id="app" class="app hidden">
+  <aside class="sidebar">
+    <div class="brand">M<span>.</span>M <b>FITNESS</b></div>
+    <p class="side-label">YOUR SPACE</p>
+    <button class="nav active" data-page="overview">◈ Overview</button>
+    <button class="nav" data-page="timetable">▦ My timetable</button>
+    <button class="nav" data-page="workouts">▣ Workouts</button>
+    <button class="nav" data-page="trackers">◉ Daily trackers</button>
+    <button class="nav" data-page="nutrition">✦ Nutrition</button>
+    <button class="nav" data-page="wellness">♡ Wellness</button>
+    <button class="nav" data-page="profile">⚙ My profile</button>
+    <div class="side-bottom"><p>BUILT FOR EVERY BODY</p><button id="logout">↗ Log out</button></div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><div class="eyebrow">YOUR PERSONAL FITNESS SPACE</div><h2 id="pageTitle">Overview</h2></div>
+      <div class="top-right"><span class="online">● ONLINE</span><div class="avatar" id="avatar">M</div></div>
+    </header>
+
+    <section id="onboarding" class="onboarding hidden">
+      <div class="onboard-art">
+        <div class="eyebrow">YOUR JOURNEY STARTS HERE</div>
+        <h1>BUILD YOUR<br><span>OWN PLAN.</span></h1>
+        <p>Answer a few questions. Your fitness space will be shaped around your routine and goals.</p>
+        <div class="art-ring">M<span>.</span>M</div>
+      </div>
+      <div class="onboard-form">
+        <div class="eyebrow" id="stepLabel">STEP 1 OF 3</div>
+        <div class="step-track"><i id="stepBar"></i></div>
+        <div id="stepContent"></div>
+        <div class="step-buttons">
+          <button id="backStep" class="secondary hidden">BACK</button>
+          <button id="nextStep" class="lime">CONTINUE ↗</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="login" class="login hidden">
+      <div class="login-art"><div class="eyebrow">WELCOME TO THE MOVEMENT</div>
+        <h1>NO<br>LIMITS<span>.</span></h1><p>YOUR PACE. YOUR POWER.</p>
+      </div>
+      <div class="login-form">
+        <div class="eyebrow">M.M FITNESS MEMBER SPACE</div>
+        <h2>LET'S GET<br><span>STARTED.</span></h2>
+        <label>Your name</label><input id="loginName" placeholder="Enter your name">
+        <button id="loginButton" class="lime full">CONTINUE ↗</button>
+        <p class="muted">Your profile is saved in this browser.</p>
+      </div>
+    </section>
+
+    <div id="dashboard" class="hidden">
+      <section id="overview" class="page">
+        <div class="hero">
+          <div><div class="eyebrow">WELCOME TO YOUR NEXT LEVEL</div>
+            <h1>MAKE EVERY<br>REP <span>COUNT.</span></h1>
+            <p id="helloText">Your journey starts today.</p>
+            <button class="lime" data-go="timetable">VIEW MY TIMETABLE ↗</button>
+          </div>
+          <div class="hero-art"><div class="hero-circle"></div><div class="hero-mm">M<span>.</span>M</div><small>BUILT DIFFERENT.</small></div>
+        </div>
+        <div class="quote"><span>✦ DAILY MINDSET</span><p id="quoteText"></p></div>
+        <div class="section-head"><div><div class="eyebrow">YOUR DAILY SNAPSHOT</div><h2>Today's activity</h2></div></div>
+        <div class="stats">
+          <div class="stat"><span>WATER</span><strong id="overviewWater">0/8</strong><div class="track"><i id="overviewWaterBar"></i></div><button class="small" data-go="trackers">UPDATE</button></div>
+          <div class="stat"><span>WORKOUT</span><strong id="overviewWorkout">0/1</strong><p>Today's session</p></div>
+          <div class="stat"><span>FITNESS GOAL</span><strong class="goal-text" id="overviewGoal">FITNESS</strong><p id="overviewLevel">Beginner</p></div>
+          <div class="stat"><span>SLEEP</span><strong id="overviewSleep">0 h</strong><p>Last recorded</p></div>
+        </div>
+        <div class="section-head"><div><div class="eyebrow">YOUR PERSONAL PLAN</div><h2>Today's workout</h2></div></div>
+        <div class="panel" id="todayWorkout"></div>
+      </section>
+
+      <section id="timetable" class="page hidden">
+        <div class="page-banner"><div class="eyebrow">PLAN · TRAIN · REPEAT</div><h1>YOUR WEEK.<br><span>YOUR RULES.</span></h1><p>Edit your sessions and choose what works for your day.</p></div>
+        <div class="panel">
+          <div class="panel-head"><h3>Weekly workout timetable</h3><button id="resetPlan" class="secondary">RESET PLAN</button></div>
+          <p class="muted">Select a day to edit its activity. Sunday is reserved as a rest day.</p>
+          <div id="weekSchedule" class="schedule"></div>
+        </div>
+        <div class="panel">
+          <h3>Edit selected day</h3>
+          <label>Day</label><select id="editDay"></select>
+          <label>Workout / activity</label><select id="editActivity"></select>
+          <label>Session duration</label><select id="editDuration"><option>30 minutes</option><option>45 minutes</option><option>60 minutes</option><option>75 minutes</option></select>
+          <label>Preferred time</label><input type="time" id="editTime" value="17:00">
+          <label>Day status</label><select id="editStatus"><option>Workout</option><option>Light activity</option><option>Rest day</option></select>
+          <button id="saveSchedule" class="lime">SAVE THIS DAY</button>
+          <p id="scheduleMessage" class="muted"></p>
+        </div>
+      </section>
+
+      <section id="workouts" class="page hidden">
+        <div class="page-banner"><div class="eyebrow">TRAIN WITH PURPOSE</div><h1>THE WORKOUT<br><span>ZONE.</span></h1><p>Explore exercises and learn how to perform them safely.</p></div>
+        <div class="filters">
+          <button class="filter active" data-filter="All">All</button>
+          <button class="filter" data-filter="Abs">Abs</button>
+          <button class="filter" data-filter="Legs">Legs</button>
+          <button class="filter" data-filter="Chest">Chest</button>
+          <button class="filter" data-filter="Shoulders">Shoulders</button>
+          <button class="filter" data-filter="Full Body">Full body</button>
+        </div>
+        <div id="exerciseGrid" class="exercise-grid"></div>
+        <div id="exerciseDetail" class="panel hidden"></div>
+        <div class="panel"><h3>Workout suggestion</h3><p class="muted">Not sure what to train? Get a suggestion based on your selected experience level.</p><button id="suggestWorkout" class="lime">SUGGEST A WORKOUT ↗</button><p id="suggestion" class="muted"></p></div>
+      </section>
+
+      <section id="trackers" class="page hidden">
+        <div class="page-banner"><div class="eyebrow">SMALL ACTIONS ADD UP</div><h1>DAILY<br><span>TRACKERS.</span></h1><p>Record your habits and watch your consistency grow.</p></div>
+        <div class="tracker-grid">
+          <div class="panel"><div class="eyebrow">01 / HYDRATION</div><h3>Water tracker</h3><strong class="big-number" id="waterValue">0 / 8</strong><div class="track"><i id="waterBar"></i></div><button id="addWater" class="lime">+ ADD ONE GLASS</button><button id="resetWater" class="secondary">RESET TODAY</button></div>
+          <div class="panel"><div class="eyebrow">02 / WORKOUT</div><h3>Workout tracker</h3><p class="muted" id="workoutTodayText">Today's session</p><label><input type="checkbox" id="workoutDone" class="check"> I completed my workout</label><p id="workoutStatus" class="muted"></p></div>
+          <div class="panel"><div class="eyebrow">03 / MEALS</div><h3>Meal tracker</h3><div id="mealChecks"></div><p id="mealCount" class="muted"></p></div>
+          <div class="panel"><div class="eyebrow">04 / SLEEP</div><h3>Sleep tracker</h3><label>Hours slept last night</label><input type="number" id="sleepHours" min="0" max="24" step=".5" placeholder="Example: 7.5"><button id="saveSleep" class="lime">SAVE SLEEP</button><p id="sleepMessage" class="muted"></p></div>
+          <div class="panel"><div class="eyebrow">05 / BODY PROGRESS</div><h3>Weight tracker</h3><label>Weight in kg</label><input type="number" id="weightInput" min="1" max="500" step=".1" placeholder="Enter weight"><button id="saveWeight" class="lime">SAVE WEIGHT</button><div id="weightHistory"></div></div>
+          <div class="panel"><div class="eyebrow">06 / DAILY HABITS</div><h3>Habit checklist</h3><div id="habitChecks"></div><p class="muted">Tick habits as you complete them.</p></div>
+        </div>
+      </section>
+
+      <section id="nutrition" class="page hidden">
+        <div class="page-banner"><div class="eyebrow">FUEL YOUR PERFORMANCE</div><h1>EAT WELL.<br><span>MOVE WELL.</span></h1><p>Everyday meal ideas to support an active lifestyle.</p></div>
+        <div class="meal-grid">
+          <div class="meal-card"><span>01 / BREAKFAST</span><h3>Start strong.</h3><p>Idli with sambar, oats, eggs or vegetable poha.</p></div>
+          <div class="meal-card"><span>02 / LUNCH</span><h3>Build energy.</h3><p>Rice or roti, dal, vegetables, curd and a protein choice.</p></div>
+          <div class="meal-card"><span>03 / SNACK</span><h3>Stay fuelled.</h3><p>Fruit, nuts, yoghurt or roasted chana.</p></div>
+          <div class="meal-card"><span>04 / DINNER</span><h3>Recover well.</h3><p>Roti or rice with paneer, eggs, dal and vegetables.</p></div>
+        </div>
+        <div class="panel"><h3>Your food preference</h3><p id="foodPreference" class="muted"></p><p class="muted">These are general meal ideas, not a medical diet. Portion needs vary with your body, activity and health.</p></div>
+        <div class="panel"><h3>Meal reminder schedule</h3><div id="reminderFields"></div><button id="saveReminders" class="lime">SAVE REMINDER TIMES</button><p id="reminderMessage" class="muted"></p><p class="muted">Browser reminders require permission and the website to remain open. This prototype does not send reliable background notifications.</p></div>
+      </section>
+
+      <section id="wellness" class="page hidden">
+        <div class="page-banner"><div class="eyebrow">MIND · BODY · BALANCE</div><h1>WELLNESS<br><span>MATTERS.</span></h1><p>Listen to your body. Recovery is part of training.</p></div>
+        <div class="panel"><h3>Daily wellbeing check-in</h3><label>Energy</label><select id="energy"><option>Good</option><option>Average</option><option>Low</option></select><label>What do you need today?</label><select id="feeling"><option>Full workout</option><option>Light movement</option><option>Rest day</option></select><button id="saveWellness" class="lime">SAVE CHECK-IN</button><p id="wellnessMessage" class="muted"></p></div>
+        <div id="womenWellness" class="panel hidden"><div class="eyebrow">WOMEN'S WELLNESS</div><h3>Cycle journal</h3><p class="muted">Optional personal cycle log. Period dates do not automatically cancel workouts. Choose activity or rest based on your comfort and symptoms.</p><label>Period start</label><input type="date" id="periodStart"><label>Period end</label><input type="date" id="periodEnd"><button id="saveCycle" class="lime">SAVE CYCLE LOG</button><p id="cycleMessage" class="muted"></p><h3>PCOS / PCOD awareness</h3><p class="muted">Regular movement, balanced nutrition and sleep can support general wellbeing. This section is educational only and does not diagnose or treat PCOS/PCOD. Seek individual guidance from a qualified healthcare professional.</p></div>
+      </section>
+
+      <section id="profile" class="page hidden">
+        <div class="page-banner"><div class="eyebrow">YOUR DETAILS</div><h1>YOUR<br><span>PROFILE.</span></h1></div>
+        <div class="panel" id="profileDetails"></div>
+        <div class="panel"><h3>Edit your goal</h3><select id="profileGoal"><option>General fitness</option><option>Weight loss</option><option>Weight gain</option><option>Muscle building</option><option>Lean muscle</option><option>Maintain fitness</option></select><button id="saveGoal" class="lime">UPDATE GOAL</button><p id="goalMessage" class="muted"></p></div>
+      </section>
+    </div>
+
+    <footer>M.M FITNESS <span>·</span> MOVE BEYOND YOUR LIMITS</footer>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
