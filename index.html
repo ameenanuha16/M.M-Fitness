@@ -4,40 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#080d09">
+  <meta name="description" content="M.M FITNESS — Built For Every Body">
   <title>M.M FITNESS | Built For Every Body</title>
+
   <link rel="stylesheet" href="style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@400;700;900&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- OPENING ANIMATION -->
-  <div id="loader" class="loader">
-    <div class="loader-orbit orbit-one"></div>
-    <div class="loader-orbit orbit-two"></div>
-    <div class="loader-core">M<span>.</span>M</div>
-    <div class="loader-name">M.M FITNESS</div>
-    <div class="loader-caption">BUILT FOR EVERY BODY</div>
-    <div class="loader-progress"><span></span></div>
+  <!-- INTRO ANIMATION -->
+  <div id="introScreen" class="intro-screen">
+
+    <div id="loader" class="loader premium-loader">
+
+      <div class="intro-glow"></div>
+
+      <div class="intro-content">
+
+        <div class="orbit-system">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+
+          <div class="logo-core">
+            <span>M.M</span>
+          </div>
+        </div>
+
+        <h1 class="intro-title">M.M FITNESS</h1>
+        <p class="intro-subtitle">BUILT FOR EVERY BODY</p>
+
+        <div class="loading-track">
+          <div class="loading-fill"></div>
+        </div>
+
+        <p class="loading-text">STRENGTH · BALANCE · PROGRESS</p>
+
+      </div>
+    </div>
   </div>
+
 
   <!-- LOGIN / SIGNUP -->
   <section id="authScreen" class="auth-screen hidden">
+
     <div class="auth-visual">
       <div class="visual-orbit"></div>
       <div class="visual-orbit visual-orbit-two"></div>
+
       <div class="visual-center">M<span>.</span>M</div>
       <p class="visual-caption">BUILT FOR EVERY BODY</p>
     </div>
 
     <div class="auth-card">
+
       <div class="brand">M<span>.</span>M FITNESS</div>
       <p class="eyebrow">YOUR FITNESS JOURNEY STARTS HERE</p>
+
       <h1 id="authTitle">Welcome Back.</h1>
-      <p class="muted" id="authSubtitle">Sign in to continue your journey.</p>
+
+      <p class="muted" id="authSubtitle">
+        Sign in to continue your journey.
+      </p>
 
       <form id="authForm">
+
         <div id="nameGroup" class="hidden">
           <label for="fullName">Full name</label>
           <input id="fullName" type="text" placeholder="Enter your name">
@@ -49,41 +83,52 @@
         <label for="password">Password</label>
         <input id="password" type="password" placeholder="Enter password" minlength="6" required>
 
-        <button class="primary-btn" id="authSubmit" type="submit">SIGN IN</button>
+        <button class="primary-btn" id="authSubmit" type="submit">
+          SIGN IN
+        </button>
+
       </form>
 
       <p id="authMessage" class="message" aria-live="polite"></p>
+
       <p class="auth-switch">
         <span id="switchText">New to M.M FITNESS?</span>
-        <button type="button" id="switchAuth" class="text-btn">Create account</button>
+        <button type="button" id="switchAuth" class="text-btn">
+          Create account
+        </button>
       </p>
+
     </div>
   </section>
+
 
   <!-- MAIN APPLICATION -->
   <div id="app" class="app hidden">
 
     <aside class="sidebar">
+
       <div class="brand">M<span>.</span>M FITNESS</div>
       <p class="side-caption">BUILT FOR EVERY BODY</p>
-
       <p class="side-label">YOUR SPACE</p>
 
       <button class="nav active" data-page="dashboard">◈ &nbsp; Overview</button>
       <button class="nav" data-page="profile">◎ &nbsp; My Profile</button>
       <button class="nav" data-page="workouts">✦ &nbsp; Workouts</button>
       <button class="nav" data-page="nutrition">◉ &nbsp; Nutrition</button>
-      <button class="nav" data-page="progress">↗ &nbsp; Progress</button>
+      <button class="nav" data-page="progress">↗️ &nbsp; Progress</button>
       <button class="nav" data-page="women">♡ &nbsp; Women's Wellness</button>
       <button class="nav" data-page="assistant">✧ &nbsp; AI Fitness Assistant</button>
 
       <div class="sidebar-bottom">
         <div class="online-dot">● YOUR FITNESS SPACE</div>
-        <button id="logoutBtn" class="logout-btn">↗ &nbsp; Log out</button>
+        <button id="logoutBtn" class="logout-btn">↗️ &nbsp; Log out</button>
       </div>
+
     </aside>
 
+
     <main class="main">
+
       <header class="topbar">
         <div>
           <p class="eyebrow">M.M FITNESS / MEMBER AREA</p>
@@ -92,14 +137,17 @@
         <div class="user-chip" id="userInitials">MM</div>
       </header>
 
+
       <!-- DASHBOARD -->
       <section class="page active" id="page-dashboard">
+
         <div class="welcome-row">
           <div>
             <p class="eyebrow">YOUR NEXT LEVEL BEGINS NOW</p>
             <h1>Welcome, <span id="welcomeName">Athlete</span>.</h1>
             <p class="muted">Small steps. Strong habits. Real progress.</p>
           </div>
+
           <div class="energy-sphere">
             <div class="sphere-ring"></div>
             <div class="sphere-ring ring-two"></div>
@@ -111,11 +159,14 @@
           <span class="eyebrow">TODAY'S THOUGHT</span>
           <h3 id="dailyQuote">Discipline creates the results motivation promises.</h3>
           <p id="quoteAuthor">— M.M FITNESS</p>
-          <button id="newQuoteBtn" class="text-btn">Another thought ↗</button>
+          <button id="newQuoteBtn" class="text-btn">Another thought ↗️</button>
         </div>
 
         <div class="section-heading">
-          <div><p class="eyebrow">YOUR NUMBERS</p><h2>Fitness snapshot</h2></div>
+          <div>
+            <p class="eyebrow">YOUR NUMBERS</p>
+            <h2>Fitness snapshot</h2>
+          </div>
         </div>
 
         <div class="stats-grid">
@@ -124,11 +175,13 @@
             <strong id="bmiValue">—</strong>
             <small id="bmiStatus">Add your details in Profile</small>
           </article>
+
           <article class="stat-card">
             <span>WATER TODAY</span>
             <strong id="waterValue">0 / 8</strong>
             <small>Glasses completed</small>
           </article>
+
           <article class="stat-card">
             <span>WORKOUTS LOGGED</span>
             <strong id="workoutValue">0</strong>
@@ -137,31 +190,62 @@
         </div>
 
         <div class="section-heading">
-          <div><p class="eyebrow">DAILY ACTION</p><h2>Today's checklist</h2></div>
+          <div>
+            <p class="eyebrow">DAILY ACTION</p>
+            <h2>Today's checklist</h2>
+          </div>
         </div>
+
         <div class="panel checklist">
           <label><input type="checkbox"> Complete your workout</label>
           <label><input type="checkbox"> Eat balanced meals</label>
           <label><input type="checkbox"> Drink enough water</label>
           <label><input type="checkbox"> Get enough sleep</label>
         </div>
+
       </section>
+
 
       <!-- PROFILE -->
       <section class="page" id="page-profile">
+
         <p class="eyebrow">YOUR PERSONAL DETAILS</p>
         <h1>My Profile</h1>
         <p class="muted">Your details help personalize your fitness estimates.</p>
 
         <form id="profileForm" class="panel form-grid">
-          <div><label for="profileName">Full name</label><input id="profileName" type="text" placeholder="Your name"></div>
-          <div><label for="profileAge">Age</label><input id="profileAge" type="number" min="13" max="100" placeholder="Age"></div>
-          <div><label for="profileHeight">Height (cm)</label><input id="profileHeight" type="number" min="80" max="250" placeholder="Height"></div>
-          <div><label for="profileWeight">Weight (kg)</label><input id="profileWeight" type="number" min="20" max="350" step="0.1" placeholder="Weight"></div>
-          <div><label for="profileGender">Section</label>
-            <select id="profileGender"><option value="">Select</option><option value="men">Men</option><option value="women">Women</option></select>
+
+          <div>
+            <label for="profileName">Full name</label>
+            <input id="profileName" type="text" placeholder="Your name">
           </div>
-          <div><label for="profileGoal">Fitness goal</label>
+
+          <div>
+            <label for="profileAge">Age</label>
+            <input id="profileAge" type="number" min="13" max="100" placeholder="Age">
+          </div>
+
+          <div>
+            <label for="profileHeight">Height (cm)</label>
+            <input id="profileHeight" type="number" min="80" max="250" placeholder="Height">
+          </div>
+
+          <div>
+            <label for="profileWeight">Weight (kg)</label>
+            <input id="profileWeight" type="number" min="20" max="350" step="0.1" placeholder="Weight">
+          </div>
+
+          <div>
+            <label for="profileGender">Section</label>
+            <select id="profileGender">
+              <option value="">Select</option>
+              <option value="men">Men</option>
+              <option value="women">Women</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="profileGoal">Fitness goal</label>
             <select id="profileGoal">
               <option value="">Choose a goal</option>
               <option value="fat-loss">Fat loss</option>
@@ -170,18 +254,38 @@
               <option value="maintain">Maintain fitness</option>
             </select>
           </div>
-          <div><label for="profileLevel">Fitness level</label>
-            <select id="profileLevel"><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select>
+
+          <div>
+            <label for="profileLevel">Fitness level</label>
+            <select id="profileLevel">
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
           </div>
-          <div><label for="profileDiet">Diet preference</label>
-            <select id="profileDiet"><option value="vegetarian">Vegetarian</option><option value="non-vegetarian">Non-vegetarian</option><option value="vegan">Vegan</option><option value="other">Other</option></select>
+
+          <div>
+            <label for="profileDiet">Diet preference</label>
+            <select id="profileDiet">
+              <option value="vegetarian">Vegetarian</option>
+              <option value="non-vegetarian">Non-vegetarian</option>
+              <option value="vegan">Vegan</option>
+              <option value="other">Other</option>
+            </select>
           </div>
-          <div class="full-width"><button class="primary-btn" type="submit">SAVE MY PROFILE</button><p id="profileMessage" class="message"></p></div>
+
+          <div class="full-width">
+            <button class="primary-btn" type="submit">SAVE MY PROFILE</button>
+            <p id="profileMessage" class="message"></p>
+          </div>
+
         </form>
       </section>
 
+
       <!-- WORKOUTS -->
       <section class="page" id="page-workouts">
+
         <p class="eyebrow">MOVE WITH PURPOSE</p>
         <h1>Workout Library</h1>
         <p class="muted">Choose a workout and build your routine progressively.</p>
@@ -195,6 +299,7 @@
             <option value="shoulders">Shoulders</option>
             <option value="full-body">Full body</option>
           </select>
+
           <select id="workoutLevel">
             <option value="all">All levels</option>
             <option value="beginner">Beginner</option>
@@ -202,88 +307,179 @@
             <option value="advanced">Advanced</option>
           </select>
         </div>
+
         <div id="workoutList" class="workout-grid"></div>
+
       </section>
+
 
       <!-- NUTRITION -->
       <section class="page" id="page-nutrition">
+
         <p class="eyebrow">FUEL YOUR BODY</p>
         <h1>Nutrition & Hydration</h1>
         <p class="muted">Build balanced eating and hydration habits.</p>
 
         <div class="panel water-panel">
-          <div><p class="eyebrow">WATER TRACKER</p><h2 id="waterCount">0 of 8 glasses</h2></div>
+          <div>
+            <p class="eyebrow">WATER TRACKER</p>
+            <h2 id="waterCount">0 of 8 glasses</h2>
+          </div>
+
           <div class="water-actions">
             <button id="removeWater" class="secondary-btn">−</button>
             <button id="addWater" class="primary-btn">+ ADD GLASS</button>
           </div>
-          <div class="water-track"><span id="waterBar"></span></div>
+
+          <div class="water-track">
+            <span id="waterBar"></span>
+          </div>
         </div>
 
-        <div class="section-heading"><div><p class="eyebrow">MEAL IDEAS</p><h2>Build your plate</h2></div></div>
-        <div class="meal-grid">
-          <article class="panel"><span>01 / BREAKFAST</span><h3>Start strong</h3><p>Oats, eggs, fruit or a balanced vegetarian breakfast.</p></article>
-          <article class="panel"><span>02 / LUNCH</span><h3>Balanced plate</h3><p>Vegetables, protein and a suitable portion of rice or roti.</p></article>
-          <article class="panel"><span>03 / SNACK</span><h3>Smart snack</h3><p>Fruit, yogurt, nuts or another suitable snack.</p></article>
-          <article class="panel"><span>04 / DINNER</span><h3>Finish well</h3><p>A balanced meal with vegetables and a protein source.</p></article>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MEAL IDEAS</p>
+            <h2>Build your plate</h2>
+          </div>
         </div>
-        <p class="muted">These are general meal ideas, not a personalized medical diet. Your needs depend on your health, activity and goals.</p>
+
+        <div class="meal-grid">
+          <article class="panel">
+            <span>01 / BREAKFAST</span>
+            <h3>Start strong</h3>
+            <p>Oats, eggs, fruit or a balanced vegetarian breakfast.</p>
+          </article>
+
+          <article class="panel">
+            <span>02 / LUNCH</span>
+            <h3>Balanced plate</h3>
+            <p>Vegetables, protein and a suitable portion of rice or roti.</p>
+          </article>
+
+          <article class="panel">
+            <span>03 / SNACK</span>
+            <h3>Smart snack</h3>
+            <p>Fruit, yogurt, nuts or another suitable snack.</p>
+          </article>
+
+          <article class="panel">
+            <span>04 / DINNER</span>
+            <h3>Finish well</h3>
+            <p>A balanced meal with vegetables and a protein source.</p>
+          </article>
+        </div>
+
+        <p class="muted">
+          These are general meal ideas, not a personalized medical diet.
+          Your needs depend on your health, activity and goals.
+        </p>
+
       </section>
+
 
       <!-- PROGRESS -->
       <section class="page" id="page-progress">
+
         <p class="eyebrow">EVERY STEP COUNTS</p>
         <h1>Your Progress</h1>
+
         <div class="panel">
           <h2>Workout history</h2>
           <p class="muted">Your completed workout sessions will appear here.</p>
           <strong id="progressWorkouts">0 workouts completed</strong>
           <div id="progressHistory" class="history-list"></div>
         </div>
+
       </section>
+
 
       <!-- WOMEN'S WELLNESS -->
       <section class="page" id="page-women">
+
         <p class="eyebrow">WELLNESS & MOVEMENT</p>
         <h1>Women's Wellness</h1>
         <p class="muted">Track your cycle and adjust activity according to how you feel.</p>
+
         <div class="panel form-grid">
-          <div><label for="periodStart">Period start date</label><input id="periodStart" type="date"></div>
-          <div><label for="periodEnd">Period end date</label><input id="periodEnd" type="date"></div>
-          <div class="full-width"><button id="savePeriod" class="primary-btn">SAVE CYCLE DATES</button><p id="periodMessage" class="message"></p></div>
+          <div>
+            <label for="periodStart">Period start date</label>
+            <input id="periodStart" type="date">
+          </div>
+
+          <div>
+            <label for="periodEnd">Period end date</label>
+            <input id="periodEnd" type="date">
+          </div>
+
+          <div class="full-width">
+            <button id="savePeriod" class="primary-btn">SAVE CYCLE DATES</button>
+            <p id="periodMessage" class="message"></p>
+          </div>
         </div>
+
         <div class="panel">
           <h2>Listen to your body</h2>
           <p>Choose rest or gentle movement whenever that feels right. Your symptoms and energy levels can vary.</p>
-          <label class="rest-toggle"><input id="restDay" type="checkbox"> Mark today as a rest day</label>
+          <label class="rest-toggle">
+            <input id="restDay" type="checkbox">
+            Mark today as a rest day
+          </label>
         </div>
+
         <div class="panel">
           <h2>PCOS / PCOD learning corner</h2>
-          <p>Regular movement, balanced nutrition, sleep and stress management can support general wellbeing. This section is educational, not a diagnosis or treatment plan. Consult a qualified healthcare professional for individual care.</p>
+          <p>
+            Regular movement, balanced nutrition, sleep and stress
+            management can support general wellbeing. This section
+            is educational, not a diagnosis or treatment plan.
+            Consult a qualified healthcare professional for individual care.
+          </p>
         </div>
+
       </section>
+
 
       <!-- FITNESS ASSISTANT -->
       <section class="page" id="page-assistant">
+
         <p class="eyebrow">YOUR FITNESS COMPANION</p>
         <h1>AI Fitness Assistant</h1>
         <p class="muted">Ask a question about workouts, routines or general fitness.</p>
+
         <div class="panel chat-panel">
+
           <div id="chatMessages" class="chat-messages">
-            <div class="chat-bubble bot">Hello! I'm your M.M FITNESS assistant. What fitness topic would you like help with?</div>
+            <div class="chat-bubble bot">
+              Hello! I'm your M.M FITNESS assistant.
+              What fitness topic would you like help with?
+            </div>
           </div>
+
           <form id="chatForm" class="chat-form">
             <input id="chatInput" type="text" placeholder="Ask a fitness question..." required>
             <button class="primary-btn" type="submit">SEND</button>
           </form>
-          <p class="muted">This starter assistant provides basic programmed guidance; it is not a live AI or a medical professional.</p>
+
+          <p class="muted">
+            This starter assistant provides basic programmed guidance;
+            it is not a live AI or a medical professional.
+          </p>
+
         </div>
+
       </section>
 
-      <footer class="footer">M.M FITNESS <span>•</span> BUILT FOR EVERY BODY</footer>
+
+      <footer class="footer">
+        M.M FITNESS <span>•</span> BUILT FOR EVERY BODY
+      </footer>
+
     </main>
   </div>
 
+
+  <!-- FIREBASE JAVASCRIPT -->
   <script type="module" src="script.js"></script>
+
 </body>
 </html>
